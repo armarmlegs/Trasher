@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trasher</title>
-    <link rel="stylesheet" href="style.css">
-    <script type ="module" src="app.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>RANDOM GNARLY TRICKS</h1>
+    </header>
 
-    <div class = "original"> <input type="text" placeholder="Sequence"> </div>
+    <div id="images">
+      <img src="img/spacebar-pagedown.png" alt="space" class="img" />
+      <img src="img/down-arrow.png" alt="down-arrow" class="arrow" />
+      <img src="img/left-arrow.png" alt="left-arrow" class="arrow" />
+    </div>
 
+    <div class="input"><input type="text" placeholder="sequence" class="txtArea" /></div>
+
+    <div class="container">
+      <div class="progress-bar"></div>
+    </div>
     
-</body>
+
+    <script type="module" src="app.js"></script>
+  </body>
 </html>

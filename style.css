@@ -1,7 +1,94 @@
-.toBeMimic{
+@font-face {
+  font-family: reggae;
+  src: url(fonts/Amatic_SC/AmaticSC-Regular.ttf);
+}
 
-    width: 1000 px;
-    height: 20%;
-    border: 1px solid black;
-    padding: 50px;
+.toBeMimic {
+  width: 1000 px;
+  height: 20%;
+  border: 1px solid black;
+  padding: 50px;
+}
+
+.header {
+  font-family: reggae;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: flex-start;
+  border-bottom: 10px solid black;
+}
+
+h1 {
+  font-family: reggae;
+}
+
+.original {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: flex-start;
+}
+
+#images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  height: 200px;
+  border-bottom: 10px solid black;
+}
+
+.img {
+  width: 10%;
+}
+
+.arrow {
+  width: 5%;
+}
+
+.txtArea{
+    width: 300px;
+    font-size: 50px;
+    margin: 0 auto;
+
+
+}
+
+.container {
+  height: 40px;
+  background-color: #ccc;
+  position: relative;
+  border-radius: 10px;
+}
+
+.container .progress-bar {
+  position: absolute;
+  height: 100%;
+  background-color: cadetblue;
+  animation: progress-animation 8s, forwards;
+  border-radius: 10px;
+}
+
+.container .play-animation {
+  position: absolute;
+  height: 100%;
+  background-color: cadetblue;
+  animation: progress-animation 8s, forwards;
+  border-radius: 10px;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
