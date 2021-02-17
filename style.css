@@ -18,11 +18,15 @@
   justify-content: space-around;
   align-items: baseline;
   align-content: flex-start;
-  border-bottom: 10px solid black;
+  border-bottom: 5px solid black;
 }
 
 h1 {
   font-family: reggae;
+}
+
+.floating{
+  float:right;
 }
 
 .original {
@@ -37,12 +41,12 @@ h1 {
 #images {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  align-content: stretch;
-  height: 200px;
-  border-bottom: 10px solid black;
+  align-content: center;
+  height: 100px;
+  border-bottom: 5px solid black;
 }
 
 .img {
@@ -53,12 +57,10 @@ h1 {
   width: 5%;
 }
 
-.txtArea{
-    width: 300px;
-    font-size: 50px;
-    margin: 0 auto;
-
-
+.txtArea {
+  width: 300px;
+  font-size: 50px;
+  margin: 0 auto;
 }
 
 .container {
@@ -72,16 +74,12 @@ h1 {
   position: absolute;
   height: 100%;
   background-color: cadetblue;
-  animation: progress-animation 8s, forwards;
+
   border-radius: 10px;
 }
 
-.container .play-animation {
-  position: absolute;
-  height: 100%;
-  background-color: cadetblue;
-  animation: progress-animation 8s, forwards;
-  border-radius: 10px;
+#play-animation {
+  animation: progress-animation 10s, forwards;
 }
 
 @keyframes progress-animation {
@@ -91,4 +89,9 @@ h1 {
   100% {
     width: 0%;
   }
+}
+
+.hypeMan{
+  font-family: reggae;
+
 }

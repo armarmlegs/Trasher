@@ -1,12 +1,19 @@
 let userTxt = [];
 
-let lvl1 = ["up", "down", "space", "space"];
-let lvl2 = [];
-let lvl3 = [];
+let i = 0;
 
-console.log(userTxt);
+let currentLevelIndex = 0;
+console.log(currentLevelIndex);
+let levels = [
+  ["up", "down", "space", "space"],
+  ["down", "up", "left", "right"],
+  ["down", "up", "left", "space", "right"],
+];
+let timeout = null;
+
 let input = document.querySelector("input");
 console.log(input);
+let point = document.querySelector(".txtArea");
 
 input.addEventListener("keydown", handler, true);
 let up = false;
@@ -20,61 +27,92 @@ function handler(event) {
   if (event.keyCode == keyboardEasy.right) {
     right = true;
     push("right");
-    compare();
+    point.innerHTML += "right";
   } else if (event.keyCode == keyboardEasy.left) {
     left = true;
     push("left");
-    compare();
+    console.log("leftArrow");
   } else if (event.keyCode == keyboardEasy.down) {
     down = true;
     push("down");
-    compare();
+    console.log("down");
   } else if (event.keyCode == keyboardEasy.up) {
     up = true;
     push("up");
-    compare();
+    console.log("up");
   } else if (event.keyCode == keyboardEasy.space) {
     space = true;
     push("space");
-    compare();
+    console.log("space");
   }
+  compare();
 }
+
 //function push string into the usertext array
 function push(str) {
   userTxt.push(str);
-  console.log(userTxt);
 }
 
 //function is equal qui va comparer le user input a l'array
 
 function compare() {
-  console.log(lvl1, userTxt);
-  if (JSON.stringify(lvl1) === JSON.stringify(userTxt)) {
-    console.log("good!");
-  } else {
-    console.log("All wrong");
+  
+  if (i > 2) {
+    clearTimeout(timeout);
+    return alert("you won the game, try again by refreshing the page");
+    
+  }
+
+  if (userTxt.length > levels[i].length) {
+    alert(`try again dummy`);
+    gameOver();
+    clearBar();
+  } else if (JSON.stringify(levels[i]) == JSON.stringify(userTxt)) {
+    nxtlvl();
+    let hypeMan = document.querySelector(".hypeMan");
+    hypeMan.innerHTML = `Damn Son ! step ${i} is complete`;
+    
   }
 }
 
-//game init, first event listener on the window, then funciton init that will start the countdown bar.
+//game init, first event listener on the window, then function time that will start the countdown bar.
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 13) {
-    console.log("legggoooo");
     time();
+    startBar();
+    focus();
   }
 });
 
 function time() {
-  setTimeout(function () {
-    
-  }, 2000);
+   timeout =setTimeout(function () {
+    alert("Game Over you are wayyy to slowwww homie");
+  }, 10000);
 }
 
-function init() {}
+function gameOver() {
+  userTxt = [];
+  focus();
+}
 
-// let leggo = send() => {
-//     const progressBar = document.querySelector('progress-bar');
-//     progressBar.setAttribute('id','play-animation');
+function nxtlvl() {
+  levels[i] = levels[i++];
+  userTxt = [];
+  focus();
+}
 
-//launch the countdown bar 
+function startBar() {
+  let progBar = document.querySelector(".progress-bar");
+  progBar.setAttribute("id", "play-animation");
+}
 
+function clearBar() {
+  let progBar = document.getElementById("play-animation");
+  progBar.setAttribute("class", "progress-bar");
+
+  console.log(progBar);
+}
+
+function focus() {
+  point.focus();
+}
