@@ -2,18 +2,23 @@ let userTxt = [];
 
 let i = 0;
 
-let currentLevelIndex = 0;
-console.log(currentLevelIndex);
 let levels = [
   ["up", "down", "space", "space"],
   ["down", "up", "left", "right"],
   ["down", "up", "left", "space", "right"],
 ];
 let timeout = null;
+let timeLoss = null;
+
+let youSuck = document.querySelector(".bg-popup");
+console.log(youSuck);
+
+let youWin = document.querySelector(".bg-popup2");
 
 let input = document.querySelector("input");
+let inputValue = document.querySelector("input").value;
 console.log(input);
-let point = document.querySelector(".txtArea");
+console.log();
 
 input.addEventListener("keydown", handler, true);
 let up = false;
@@ -27,23 +32,23 @@ function handler(event) {
   if (event.keyCode == keyboardEasy.right) {
     right = true;
     push("right");
-    point.innerHTML += "right";
+    input.value += "➡️,";
   } else if (event.keyCode == keyboardEasy.left) {
     left = true;
     push("left");
-    console.log("leftArrow");
+    input.value += "⬅️,";
   } else if (event.keyCode == keyboardEasy.down) {
     down = true;
     push("down");
-    console.log("down");
+    input.value += "⬇️,";
   } else if (event.keyCode == keyboardEasy.up) {
     up = true;
     push("up");
-    console.log("up");
+    input.value += "⬆️,";
   } else if (event.keyCode == keyboardEasy.space) {
     space = true;
     push("space");
-    console.log("space");
+    input.value += "↔️,";
   }
   compare();
 }
@@ -56,22 +61,21 @@ function push(str) {
 //function is equal qui va comparer le user input a l'array
 
 function compare() {
-  
   if (i === 3) {
     clearTimeout(timeout);
-    return alert("you won the game speed demon, if you care to try again refresh the page");
-    
+    youWin.style.display = "flex";
+    setTimeout(function () {
+      location.reload();
+    }, 5000);
   }
 
   if (userTxt.length > levels[i].length) {
     alert(`try again dummy`);
     gameOver();
-    clearBar();
   } else if (JSON.stringify(levels[i]) == JSON.stringify(userTxt)) {
     nxtlvl();
     let hypeMan = document.querySelector(".hypeMan");
     hypeMan.innerHTML = ` <b>Damn Son ! step ${i} is complete</b>`;
-    
   }
 }
 
@@ -85,9 +89,12 @@ window.addEventListener("keydown", function (evt) {
 });
 
 function time() {
-   timeout =setTimeout(function () {
-    alert("Game Over you are wayyy to slowwww homie");
+  timeout = setTimeout(function () {
+    youSuck.style.display = "flex";
   }, 10000);
+  timeLoss = setTimeout(function () {
+    location.reload();
+  }, 15000);
 }
 
 function gameOver() {
@@ -114,5 +121,7 @@ function clearBar() {
 }
 
 function focus() {
-  point.focus();
+  input.focus();
 }
+
+x;

@@ -93,7 +93,7 @@ h1 {
 
 .hypeMan{
   font-family: reggae;
-  font-size: 20px;
+  font-size: 40px;
 
 }
 
@@ -105,4 +105,62 @@ h1 {
 	align-items: center;
 	align-content: center;
 
+}
+
+.bg-popup{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.popup-content{
+  width: 300px;
+  height:300px;
+  background-color:white;
+  border-radius: 7px;
+  border: 2px solid black;
+  text-align: center;
+  font-family: reggae;
+  font-size: 20px;
+}
+
+.tobey{
+  width: 40%;
+  
+  
+}
+
+.bg-popup2{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.popup-content2{
+  width: 300px;
+  height:300px;
+  background-color:white;
+  border-radius: 7px;
+  border: 2px solid black;
+  text-align: center;
+  font-family: reggae;
+  font-size: 20px;
+}
+
+.victory{
+  width: 40%;
+  
+  
 }
