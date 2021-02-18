@@ -57,9 +57,9 @@ function push(str) {
 
 function compare() {
   
-  if (i > 2) {
+  if (i === 3) {
     clearTimeout(timeout);
-    return alert("you won the game, try again by refreshing the page");
+    return alert("you won the game speed demon, if you care to try again refresh the page");
     
   }
 
@@ -70,7 +70,7 @@ function compare() {
   } else if (JSON.stringify(levels[i]) == JSON.stringify(userTxt)) {
     nxtlvl();
     let hypeMan = document.querySelector(".hypeMan");
-    hypeMan.innerHTML = `Damn Son ! step ${i} is complete`;
+    hypeMan.innerHTML = ` <b>Damn Son ! step ${i} is complete</b>`;
     
   }
 }
