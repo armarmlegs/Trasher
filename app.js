@@ -123,5 +123,3 @@ function clearBar() {
 function focus() {
   input.focus();
 }
-
-x;
